@@ -172,20 +172,20 @@ function App() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
               {/* CV Card */}
-              <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-blue-200">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-blue-200 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <FileText className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-xl">Curriculum Vitae</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="flex flex-col gap-4 h-full">
                   <p className="text-slate-600 text-sm">
                     Mon CV détaillé avec mon parcours académique, mes formations et mes compétences principales.
                   </p>
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 mt-auto">
                     <Button 
                       className="flex-1 bg-blue-600 hover:bg-blue-700"
                       onClick={() => window.open('/CV_L.pdf', '_blank')}
@@ -206,18 +206,18 @@ function App() {
               </Card>
 
               {/* Lettre de Motivation Card */}
-              <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-emerald-200">
+              <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-emerald-200 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <Mail className="w-8 h-8 text-white" />
                   </div>
                   <CardTitle className="text-xl">Lettre de Motivation</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="flex flex-col gap-4 h-full">
                   <p className="text-slate-600 text-sm">
                     Ma lettre de motivation détaillant ma démarche, ma façon de travailler et ce que je peux apporter à une équipe créative.
                   </p>
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 mt-auto">
                     <Button 
                       className="flex-1 bg-emerald-600 hover:bg-emerald-700"
                       onClick={() => window.open('/LM_L.pdf', '_blank')}
