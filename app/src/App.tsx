@@ -444,7 +444,9 @@ function App() {
                       `Nom : ${name || '-'}\nEmail : ${email || '-'}\n\nMessage :\n${message || ''}`,
                     )
 
-                    window.location.href = `mailto:loic.rkt0@gmail.com?subject=${subject}&body=${body}`
+                    // Ouvre un nouveau message dans Gmail (si l'utilisateur est connecté)
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=loic.rkt0@gmail.com&su=${subject}&body=${body}`
+                    window.open(gmailUrl, '_blank')
                   }}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
