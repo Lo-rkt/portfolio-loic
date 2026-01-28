@@ -21,6 +21,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
 import './App.css'
 
 type Section = 'about' | 'cv' | 'skills' | 'contact'
@@ -419,6 +422,70 @@ function App() {
                 </CardContent>
               </Card>
             </div>
+
+            {/* Contact form */}
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold text-slate-900 mb-4">M&apos;envoyer un message</h3>
+                <form
+                  className="space-y-4"
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    const form = e.currentTarget
+                    const formData = new FormData(form)
+                    const name = (formData.get('name') as string) ?? ''
+                    const email = (formData.get('email') as string) ?? ''
+                    const message = (formData.get('message') as string) ?? ''
+
+                    const subject = encodeURIComponent(
+                      `Nouveau message depuis le portfolio - ${name || 'Contact'}`,
+                    )
+                    const body = encodeURIComponent(
+                      `Nom : ${name || '-'}\nEmail : ${email || '-'}\n\nMessage :\n${message || ''}`,
+                    )
+
+                    window.location.href = `mailto:loic.rkt0@gmail.com?subject=${subject}&body=${body}`
+                  }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <Label htmlFor="name">Nom</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="Votre nom"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="vous@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Écrivez votre message..."
+                      rows={4}
+                      required
+                    />
+                  </div>
+                  <div className="flex justify-end">
+                    <Button type="submit" className="bg-slate-900 hover:bg-slate-800">
+                      Envoyer par email
+                    </Button>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
 
             <div className="bg-slate-50 rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 mb-4">Réseaux & Portfolio</h3>
