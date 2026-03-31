@@ -205,7 +205,8 @@ function App() {
                 </CardContent>
               </Card>
 
-              {/* Lettre de Motivation Card */}
+              {/* Lettre de Motivation (LM) temporairement désactivée : gardée pour plus tard */}
+              {/*
               <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-emerald-200 h-full">
                 <CardHeader className="pb-4">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -236,6 +237,7 @@ function App() {
                   </div>
                 </CardContent>
               </Card>
+              */}
             </div>
           </div>
         )
