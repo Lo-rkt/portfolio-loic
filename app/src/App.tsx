@@ -26,7 +26,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import './App.css'
 
-type Section = 'about' | 'cv' | 'skills' | 'contact'
+type Section = 'about' | 'cv' | 'projects' | 'skills' | 'contact'
 
 function App() {
   const [activeSection, setActiveSection] = useState<Section>('about')
@@ -34,7 +34,8 @@ function App() {
   const navItems = [
     { id: 'about' as Section, label: 'À propos', icon: User },
     { id: 'cv' as Section, label: 'CV', icon: FileText },
-    { id: 'skills' as Section, label: 'Compétences', icon: Briefcase },
+    { id: 'projects' as Section, label: 'Projets', icon: Briefcase },
+    { id: 'skills' as Section, label: 'Compétences', icon: Layout },
     { id: 'contact' as Section, label: 'Contact', icon: MessageSquare },
   ]
 
@@ -58,21 +59,21 @@ function App() {
               <h2 className="text-3xl font-bold text-slate-900 mb-4">À propos de moi</h2>
               <div className="prose prose-slate max-w-none">
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  Je suis un <strong>graphiste / webdesigner</strong> passionné par le design numérique et la création 
-                  d'interfaces modernes. J'utilise au quotidien <strong>Figma</strong> pour concevoir des maquettes web, 
-                  des systèmes de composants et des prototypes clairs et fonctionnels.
+                  Je suis un <strong>graphiste / webdesigner</strong> orienté produit, qui aime transformer un besoin métier 
+                  en interface claire et efficace. J&apos;utilise au quotidien <strong>Figma</strong> pour concevoir des maquettes web, 
+                  des systèmes de composants et des prototypes prêts à être développés.
                 </p>
                 <p className="text-slate-600 leading-relaxed mt-4">
-                  Humainement, je suis quelqu'un de calme, à l'écoute et très attentif aux détails : hiérarchie 
-                  typographique, cohérence des grilles, choix des couleurs et lisibilité. J'aime travailler en 
-                  équipe, comprendre les besoins des autres et transformer une idée en expérience visuelle simple 
-                  à utiliser.
+                  Humainement, je suis quelqu&apos;un de calme, à l&apos;écoute et très attentif aux détails : hiérarchie 
+                  typographique, cohérence des grilles, choix des couleurs et lisibilité. J&apos;aime travailler en 
+                  équipe, échanger avec les profils marketing / produit / développement, et faire évoluer une idée 
+                  jusqu&apos;à un parcours utilisateur simple à utiliser.
                 </p>
                 <p className="text-slate-600 leading-relaxed mt-4">
-                  J'ai également une expérience en <strong>développement web front-end</strong> (HTML/CSS, React, 
-                  Tailwind) que j'ai mise en pratique en réalisant ce portfolio et d'autres interfaces 
+                  J&apos;ai également une expérience en <strong>développement web front-end</strong> (HTML/CSS, React, 
+                  Tailwind) que j&apos;ai mise en pratique en réalisant ce portfolio et d&apos;autres interfaces 
                   web. Cette double compétence design + intégration me permet de proposer des interfaces à la fois 
-                  esthétiques et réalistes à développer.
+                  esthétiques, réalistes à développer et alignées avec les contraintes techniques.
                 </p>
               </div>
             </div>
@@ -255,33 +256,119 @@ function App() {
           </div>
         )
 
+      case 'projects':
+        return (
+          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">Projets et cas d&apos;étude</h2>
+              <p className="text-slate-600">
+                Une sélection de projets qui illustrent ma façon de travailler&nbsp;: du brief initial 
+                jusqu&apos;aux maquettes finales prêtes pour le développement.
+              </p>
+            </div>
+
+            {/* Cas d'étude principal */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg flex flex-col gap-1">
+                  <span>Refonte de landing page pour une marque digitale</span>
+                  <span className="text-xs font-normal text-slate-500">
+                    Cas d&apos;étude – positionnement de marque & conversion
+                  </span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-slate-600 text-sm">
+                  Objectif&nbsp;: moderniser l&apos;image d&apos;une marque digitale et rendre la page d&apos;accueil plus claire 
+                  pour les nouveaux visiteurs. Le point de départ était une page chargée, sans hiérarchie visuelle.
+                </p>
+                <p className="text-slate-600 text-sm">
+                  Approche&nbsp;: j&apos;ai structuré la page autour de quelques sections clés (héros, bénéfices, 
+                  preuve sociale, appel à l&apos;action), en travaillant la hiérarchie typographique, le contraste 
+                  des blocs et un système de composants réutilisables dans Figma.
+                </p>
+                <p className="text-slate-600 text-sm">
+                  Résultat&nbsp;: une page plus lisible, avec un message principal mis en avant et un design cohérent 
+                  avec l&apos;univers de marque. La structure est pensée pour être facilement intégrable en React ou 
+                  tout autre framework front.
+                </p>
+                <Button 
+                  className="bg-slate-900 hover:bg-slate-800"
+                  onClick={() => window.open('https://bit.ly/portfolio-Loic', '_blank')}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Voir les maquettes et visuels
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Autres projets (grille courte) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Identité visuelle & logos</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-slate-600 text-sm">
+                    Création de logos et déclinaisons pour plusieurs marques (couleurs, typographies, usages 
+                    réseaux sociaux et print léger).
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Logo Design</Badge>
+                    <Badge variant="secondary">Charte rapide</Badge>
+                    <Badge variant="secondary">Réseaux sociaux</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Visuels social media & Ads</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-slate-600 text-sm">
+                    Création de visuels optimisés pour Meta et Instagram (formats carré, story, carrousel) 
+                    avec un focus sur la lisibilité et l&apos;accroche.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Meta Ads</Badge>
+                    <Badge variant="secondary">Instagram</Badge>
+                    <Badge variant="secondary">Canva Pro</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )
+
       case 'skills':
         return (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Mes Compétences</h2>
               <p className="text-slate-600">
-                Compétences en design graphique, webdesign et développement front-end, adaptées à des projets digitaux variés 
-                (marques, produits, sites web, contenus pour les réseaux sociaux).
+                Compétences en design graphique, webdesign et développement front-end, appliquées à des projets digitaux variés 
+                (identités visuelles, sites web, campagnes social media). Je distingue ici ce que je sais faire au quotidien 
+                et les outils que j&apos;utilise le plus.
               </p>
             </div>
 
             <div className="space-y-6">
-              {/* Figma & Design System */}
+              {/* Design & UX */}
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
                     <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
                       <Layout className="w-4 h-4 text-purple-600" />
                     </div>
-                    Figma & Design Systems
+                    Design d&apos;interfaces & Design Systems
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-slate-600 text-sm">
-                    Maîtrise de Figma pour la création d'interfaces UI, avec utilisation des components, 
-                    variants, auto-layout et prototypage. Capacité à créer et maintenir des design systems 
-                    cohérents pour des projets multi-marques.
+                    Conception d&apos;interfaces UI adaptées aux parcours utilisateurs (pages d&apos;accueil, fiches produits, 
+                    landing pages). Utilisation des components, variants, auto-layout et prototypage dans Figma. 
+                    Capacité à créer et maintenir des design systems cohérents pour des projets multi-marques.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-4">
                     <Badge variant="secondary">Components</Badge>
@@ -378,7 +465,8 @@ function App() {
             <div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Me Contacter</h2>
               <p className="text-slate-600">
-                N'hésitez pas à me contacter pour un projet, une collaboration ou une opportunité professionnelle.
+                N&apos;hésitez pas à me contacter pour un projet, une collaboration ou une opportunité professionnelle.
+                Je suis disponible pour échanger en visio ou en présentiel, selon vos besoins.
               </p>
             </div>
 
