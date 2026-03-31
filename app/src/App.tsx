@@ -77,28 +77,6 @@ function App() {
               </div>
             </div>
 
-            {/* Portfolio Link (exemple) */}
-            <Card className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0">
-              <CardContent className="p-6">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">Exemple de portfolio</h3>
-                    <p className="text-blue-100 text-sm">
-                      Un aperçu de mes projets et de ma façon de structurer un portfolio
-                    </p>
-                  </div>
-                  <Button 
-                    variant="secondary" 
-                    className="bg-white text-blue-600 hover:bg-blue-50"
-                    onClick={() => window.open('https://bit.ly/portfolio-Loic', '_blank')}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Ouvrir le portfolio
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
               <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-100 h-full">
                 <CardContent className="p-6 flex flex-col gap-4">
@@ -174,12 +152,9 @@ function App() {
                 <FileText className="w-6 h-6 text-slate-900" />
                 Curriculum Vitae
               </h2>
-              <p className="text-slate-600">
-                Version à jour – Graphiste / Webdesigner
-              </p>
             </div>
 
-            <div className="flex justify-center items-stretch">
+            <div className="flex flex-col items-center gap-6">
               {/* CV Card */}
               <Card className="w-full max-w-xl group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-blue-200">
                 <CardHeader className="pb-4">
@@ -212,6 +187,30 @@ function App() {
                   <p className="text-xs text-slate-500 mt-3">
                     Format PDF, adapté à la lecture écran et à l&apos;impression.
                   </p>
+                </CardContent>
+              </Card>
+
+              {/* Portfolio Card */}
+              <Card className="w-full max-w-xl group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-indigo-200">
+                <CardHeader className="pb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Globe className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl">Projets sélectionnés</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-4 h-full">
+                  <p className="text-slate-600 text-sm">
+                    Un aperçu concret de mon travail en design et intégration, avec une sélection de projets.
+                  </p>
+                  <div className="flex gap-3 mt-auto">
+                    <Button 
+                      className="flex-1 bg-slate-900 hover:bg-slate-800"
+                      onClick={() => window.open('https://bit.ly/portfolio-Loic', '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Voir le portfolio
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -251,7 +250,7 @@ function App() {
             </div>
 
             <p className="text-center text-xs text-slate-500">
-              Lettre de motivation détaillée disponible sur demande.
+              Besoin d&rsquo;une lettre de motivation ? Je peux te la fournir sur demande.
             </p>
           </div>
         )
@@ -301,7 +300,7 @@ function App() {
                     <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
                       <Megaphone className="w-4 h-4 text-blue-600" />
                     </div>
-                    Campagnes Digitales & Visuels Ads
+                    Campagnes digitales & Ads
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -350,7 +349,7 @@ function App() {
                     <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
                       <Globe className="w-4 h-4 text-amber-600" />
                     </div>
-                    UI Web & Développement Front
+                    UI Web & Front-end
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
