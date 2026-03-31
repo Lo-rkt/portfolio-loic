@@ -190,30 +190,6 @@ function App() {
                 </CardContent>
               </Card>
 
-              {/* Portfolio Card */}
-              <Card className="w-full max-w-xl group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-indigo-200">
-                <CardHeader className="pb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Globe className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl">Projets sélectionnés</CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-col gap-4 h-full">
-                  <p className="text-slate-600 text-sm">
-                    Un aperçu concret de mon travail en design et intégration, avec une sélection de projets.
-                  </p>
-                  <div className="flex gap-3 mt-auto">
-                    <Button 
-                      className="flex-1 bg-slate-900 hover:bg-slate-800"
-                      onClick={() => window.open('https://bit.ly/portfolio-Loic', '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Voir le portfolio
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
               {/* Lettre de Motivation (LM) temporairement désactivée : gardée pour plus tard */}
               {/*
               <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-emerald-200 h-full">
