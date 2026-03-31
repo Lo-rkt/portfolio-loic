@@ -33,7 +33,7 @@ function App() {
 
   const navItems = [
     { id: 'about' as Section, label: 'À propos', icon: User },
-    { id: 'cv' as Section, label: 'CV & LM', icon: FileText },
+    { id: 'cv' as Section, label: 'CV', icon: FileText },
     { id: 'skills' as Section, label: 'Compétences', icon: Briefcase },
     { id: 'contact' as Section, label: 'Contact', icon: MessageSquare },
   ]
@@ -164,17 +164,24 @@ function App() {
 
       case 'cv':
         return (
-          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">CV & Lettre de Motivation</h2>
-              <p className="text-slate-600 mb-8">
-                Téléchargez mes documents professionnels (CV et lettre de motivation) pour en savoir plus sur mon parcours.
+          <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium mb-3">
+                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
+                Document principal
+              </div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-2 flex items-center justify-center gap-2">
+                <FileText className="w-6 h-6 text-slate-900" />
+                Curriculum Vitae
+              </h2>
+              <p className="text-slate-600">
+                Version à jour – Graphiste / Webdesigner
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            <div className="flex justify-center items-stretch">
               {/* CV Card */}
-              <Card className="group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-blue-200 h-full">
+              <Card className="w-full max-w-xl group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-blue-200">
                 <CardHeader className="pb-4">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <FileText className="w-8 h-8 text-white" />
@@ -191,17 +198,20 @@ function App() {
                       onClick={() => window.open('/CV_L.pdf', '_blank')}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Voir
+                      Voir le CV
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="flex-1"
+                      className="flex-1 border-blue-200"
                       onClick={() => window.open('/CV_L.pdf', '_blank')}
                     >
                       <Download className="w-4 h-4 mr-2" />
-                      Télécharger
+                      Télécharger le PDF
                     </Button>
                   </div>
+                  <p className="text-xs text-slate-500 mt-3">
+                    Format PDF, adapté à la lecture écran et à l&apos;impression.
+                  </p>
                 </CardContent>
               </Card>
 
@@ -239,6 +249,10 @@ function App() {
               </Card>
               */}
             </div>
+
+            <p className="text-center text-xs text-slate-500">
+              Lettre de motivation détaillée disponible sur demande.
+            </p>
           </div>
         )
 
