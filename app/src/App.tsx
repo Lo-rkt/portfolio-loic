@@ -34,8 +34,7 @@ function App() {
   const navItems = [
     { id: 'about' as Section, label: 'À propos', icon: User },
     { id: 'cv' as Section, label: 'CV', icon: FileText },
-    { id: 'projects' as Section, label: 'Projets', icon: Briefcase },
-    { id: 'skills' as Section, label: 'Compétences', icon: Layout },
+    { id: 'projects' as Section, label: 'Projets & compétences', icon: Briefcase },
     { id: 'contact' as Section, label: 'Contact', icon: MessageSquare },
   ]
 
@@ -260,10 +259,10 @@ function App() {
         return (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">Projets et cas d&apos;étude</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">Projets & compétences</h2>
               <p className="text-slate-600">
-                Une sélection de projets qui illustrent ma façon de travailler&nbsp;: du brief initial 
-                jusqu&apos;aux maquettes finales prêtes pour le développement.
+                Une sélection de projets qui illustre ma façon de travailler (brief, approche, résultat) 
+                et les compétences clés qui rendent ces livrables possibles.
               </p>
             </div>
 
@@ -337,6 +336,117 @@ function App() {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">Mes compétences clés</h3>
+              <p className="text-slate-600 mb-6">
+                Design d&apos;interfaces, identité visuelle, communication social media/ads et intégration front-end.
+              </p>
+
+              <div className="space-y-6">
+                {/* Design & UX */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+                        <Layout className="w-4 h-4 text-purple-600" />
+                      </div>
+                      Design d&apos;interfaces & Design Systems
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 text-sm">
+                      Conception d&apos;interfaces UI adaptées aux parcours utilisateurs (pages d&apos;accueil, fiches produits, 
+                      landing pages). Utilisation des components, variants, auto-layout et prototypage dans Figma. 
+                      Capacité à créer et maintenir des design systems cohérents pour des projets multi-marques.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      <Badge variant="secondary">Components</Badge>
+                      <Badge variant="secondary">Variants</Badge>
+                      <Badge variant="secondary">Auto-layout</Badge>
+                      <Badge variant="secondary">Prototypage</Badge>
+                      <Badge variant="secondary">Design System</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Campagnes Digitales */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                        <Megaphone className="w-4 h-4 text-blue-600" />
+                      </div>
+                      Campagnes digitales & Ads
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 text-sm">
+                      Création de visuels pour campagnes paid ads (Meta, Google, LinkedIn). 
+                      Utilisation avancée de Canva Pro pour la production marketing rapide et efficace. 
+                      Visuels orientés conversion et performance marketing.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      <Badge variant="secondary">Meta Ads</Badge>
+                      <Badge variant="secondary">LinkedIn Ads</Badge>
+                      <Badge variant="secondary">Canva Pro</Badge>
+                      <Badge variant="secondary">Visuels Conversion</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Branding & Identité */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                        <Palette className="w-4 h-4 text-emerald-600" />
+                      </div>
+                      Branding & Identité Visuelle
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 text-sm">
+                      Création de logos et d&apos;identités visuelles complètes. Déclinaisons graphiques 
+                      multi-marques à partir d&apos;un même concept. Chartes graphiques et cohérence visuelle.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      <Badge variant="secondary">Logo Design</Badge>
+                      <Badge variant="secondary">Charte Graphique</Badge>
+                      <Badge variant="secondary">Multi-marques</Badge>
+                      <Badge variant="secondary">Adobe Creative Suite</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* UI Web & Développement */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
+                        <Globe className="w-4 h-4 text-amber-600" />
+                      </div>
+                      UI Web & Front-end
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 text-sm">
+                      Conception et intégration d&apos;interfaces web responsive (desktop & mobile). 
+                      Expérience en HTML/CSS, React et Tailwind, mise en pratique notamment sur ce portfolio 
+                      et d&apos;autres interfaces front-end. Bonne compréhension des contraintes produit et développement pour 
+                      une collaboration efficace avec les équipes techniques.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      <Badge variant="secondary">UI Web</Badge>
+                      <Badge variant="secondary">Responsive Design</Badge>
+                      <Badge variant="secondary">HTML/CSS</Badge>
+                      <Badge variant="secondary">React (notions)</Badge>
+                      <Badge variant="secondary">Tailwind</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         )
@@ -518,7 +628,7 @@ function App() {
                     <div>
                       <p className="text-sm text-slate-500">Localisation</p>
                       <p className="font-medium text-slate-900">
-                        Ankadifotsy, Antananarivo, Madagascar
+                        Ankazomanga III E 30 BE BIS rue boulevard de l&apos;Europe
                       </p>
                     </div>
                   </div>
@@ -665,7 +775,7 @@ function App() {
             </a>
             <div className="flex items-center gap-3 text-sm text-slate-600">
               <MapPin className="w-4 h-4" />
-              <span>Ankadifotsy, Antananarivo</span>
+              <span>Ankazomanga III E 30 BE BIS Rue Boulevard de l&apos;Europe</span>
             </div>
           </div>
 
