@@ -279,25 +279,50 @@ function App() {
               d’échanger sur vos besoins.
             </p>
             <div className="contact-grid">
-              <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
+              <form
+                className="contact-form"
+                onSubmit={(event) => {
+                  event.preventDefault()
+                  const formData = new FormData(event.currentTarget)
+                  const name = String(formData.get('name') ?? '').trim()
+                  const email = String(formData.get('email') ?? '').trim()
+                  const message = String(formData.get('message') ?? '').trim()
+                  const subject = encodeURIComponent(`Message du portfolio - ${name}`)
+                  const body = encodeURIComponent(
+                    `Nom : ${name}\nEmail : ${email}\n\nMessage :\n${message}`,
+                  )
+
+                  window.location.href = `mailto:loic.rkt0@gmail.com?subject=${subject}&body=${body}`
+                }}
+              >
                 <div className="input-grid">
                   <label>
                     <span>Nom</span>
-                    <input type="text" placeholder="Votre nom" />
+                    <input type="text" name="name" autoComplete="name" placeholder="Votre nom" required />
                   </label>
                   <label>
                     <span>Email</span>
-                    <input type="email" placeholder="vous@email.com" />
+                    <input
+                      type="email"
+                      name="email"
+                      autoComplete="email"
+                      placeholder="vous@email.com"
+                      required
+                    />
                   </label>
                 </div>
                 <label>
                   <span>Message</span>
-                  <textarea rows={4} placeholder="Écrivez votre message..." />
+                  <textarea name="message" rows={4} placeholder="Écrivez votre message..." required />
                 </label>
                 <button type="submit" className="primary-btn full-width">
                   <ArrowUpRight size={16} />
                   Envoyer par email
                 </button>
+                <p className="form-note">
+                  Votre application de messagerie s’ouvrira avec le message prérempli. Il ne vous
+                  restera qu’à l’envoyer.
+                </p>
               </form>
 
               <div className="social-box">
