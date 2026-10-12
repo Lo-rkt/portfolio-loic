@@ -292,7 +292,7 @@ function App() {
                     `Nom : ${name}\nEmail : ${email}\n\nMessage :\n${message}`,
                   )
 
-                  window.location.href = `mailto:loic.rkt0@gmail.com?subject=${subject}&body=${body}`
+                  window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=loic.rkt0@gmail.com&su=${subject}&body=${body}`
                 }}
               >
                 <div className="input-grid">
@@ -320,8 +320,8 @@ function App() {
                   Envoyer par email
                 </button>
                 <p className="form-note">
-                  Votre application de messagerie s’ouvrira avec le message prérempli. Il ne vous
-                  restera qu’à l’envoyer.
+                  Gmail s’ouvrira avec un brouillon prérempli. Connectez-vous si demandé, puis
+                  cliquez sur « Envoyer » dans Gmail.
                 </p>
               </form>
 
