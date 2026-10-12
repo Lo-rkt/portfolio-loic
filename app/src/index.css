@@ -565,10 +565,65 @@ body.dark-mode .stat-box span {
 .chip {
   padding: 10px 14px;
   border-radius: 999px;
-  background: var(--chip-bg);
-  border: 1px solid var(--panel-border);
-  color: var(--text-soft);
+  background: var(--chip-color-bg, var(--chip-bg));
+  border: 1px solid var(--chip-color-border, var(--panel-border));
+  color: var(--chip-color-text, var(--text-soft));
   font-weight: 600;
+}
+
+.chip:nth-child(5n + 1) {
+  --chip-color-bg: rgba(59, 130, 246, 0.12);
+  --chip-color-border: rgba(59, 130, 246, 0.28);
+  --chip-color-text: #1d4ed8;
+}
+
+.chip:nth-child(5n + 2) {
+  --chip-color-bg: rgba(16, 185, 129, 0.12);
+  --chip-color-border: rgba(16, 185, 129, 0.28);
+  --chip-color-text: #047857;
+}
+
+.chip:nth-child(5n + 3) {
+  --chip-color-bg: rgba(168, 85, 247, 0.12);
+  --chip-color-border: rgba(168, 85, 247, 0.28);
+  --chip-color-text: #7e22ce;
+}
+
+.chip:nth-child(5n + 4) {
+  --chip-color-bg: rgba(245, 158, 11, 0.14);
+  --chip-color-border: rgba(245, 158, 11, 0.3);
+  --chip-color-text: #b45309;
+}
+
+.chip:nth-child(5n) {
+  --chip-color-bg: rgba(236, 72, 153, 0.12);
+  --chip-color-border: rgba(236, 72, 153, 0.28);
+  --chip-color-text: #be185d;
+}
+
+body.dark-mode .chip:nth-child(5n + 1) {
+  --chip-color-bg: rgba(59, 130, 246, 0.2);
+  --chip-color-text: #bfdbfe;
+}
+
+body.dark-mode .chip:nth-child(5n + 2) {
+  --chip-color-bg: rgba(16, 185, 129, 0.2);
+  --chip-color-text: #a7f3d0;
+}
+
+body.dark-mode .chip:nth-child(5n + 3) {
+  --chip-color-bg: rgba(168, 85, 247, 0.2);
+  --chip-color-text: #e9d5ff;
+}
+
+body.dark-mode .chip:nth-child(5n + 4) {
+  --chip-color-bg: rgba(245, 158, 11, 0.2);
+  --chip-color-text: #fde68a;
+}
+
+body.dark-mode .chip:nth-child(5n) {
+  --chip-color-bg: rgba(236, 72, 153, 0.2);
+  --chip-color-text: #fbcfe8;
 }
 
 .contact-grid {
