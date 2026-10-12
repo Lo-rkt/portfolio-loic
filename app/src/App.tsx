@@ -16,7 +16,6 @@ import {
   Moon,
   Palette,
   Phone,
-  Sparkles,
   Sun,
   User,
 } from 'lucide-react'
@@ -50,38 +49,6 @@ const projectCards = [
     tag: 'IT',
     text: 'Diagnostic de pannes, installation de postes, configuration réseau local, bureau à distance et mise en place d’environnements de travail selon cahier des charges.',
   },
-]
-
-const skills = [
-  {
-    title: 'Design & UX',
-    text: 'Figma, composants, variants, auto-layout, prototypage et création de maquettes web centrées sur l’expérience utilisateur.',
-  },
-  {
-    title: 'Systèmes & Matériel',
-    text: 'Montage et dépannage de PC, diagnostics matériels, réinstallation Windows/Linux, récupération de données et maintenance de postes.',
-  },
-  {
-    title: 'Réseau & Support',
-    text: 'Câblage réseau, TCP/IP, modèle OSI, bureau à distance, configuration poste à poste et assistance utilisateur quotidienne.',
-  },
-]
-
-const extraSkills = [
-  'Maintenance informatique',
-  'Support utilisateur',
-  'Windows 7/8/10/Server',
-  'Linux',
-  'TCP/IP',
-  'Réseaux locaux',
-  'Bureau à distance',
-  'Figma',
-  'Adobe Creative Suite',
-  'HTML/CSS',
-  'React',
-  'Rigueur',
-  'Sens du service',
-  'Disponibilité',
 ]
 
 function App() {
