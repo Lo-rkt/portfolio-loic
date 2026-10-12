@@ -37,18 +37,69 @@ const projectCards = [
   {
     title: 'Identité visuelle immobilière',
     tag: 'Branding',
-    text: 'Création d’une marque fictive complète avec site web Figma, campagnes réseaux sociaux et présentation investisseurs pour développer un cas réel de communication visuelle.',
+    text: 'Création d’une identité de marque fictive, de ses supports de communication et de ses déclinaisons. Le travail comprend une maquette de site dans Figma, des visuels pour les réseaux sociaux et une présentation destinée aux investisseurs.',
   },
   {
     title: 'Conception web vitrine',
     tag: 'UI/UX',
-    text: 'Réalisation d’un site vitrine complet avec HTML, CSS, JavaScript, React et Tailwind, en tenant compte de la structure, de la navigation et de l’expérience utilisateur.',
+    text: 'Conception d’un site vitrine responsive, de la structuration des pages à l’intégration. Le projet met l’accent sur la hiérarchie visuelle, la navigation et une expérience adaptée aux écrans mobiles comme aux ordinateurs.',
   },
   {
     title: 'Support technique & réseau',
     tag: 'IT',
-    text: 'Diagnostic de pannes, installation de postes, configuration réseau local, bureau à distance et mise en place d’environnements de travail selon cahier des charges.',
+    text: 'Assistance aux utilisateurs, diagnostic de pannes et installation de postes. Mise en place d’un réseau local, configuration du bureau à distance et préparation d’environnements de travail selon les besoins.',
   },
+  {
+    title: 'Refonte de landing page',
+    tag: 'Étude de cas',
+    text: 'Repenser une page d’accueil chargée en organisant le contenu autour d’un message principal, des bénéfices, d’éléments de réassurance et d’un appel à l’action. La maquette privilégie une lecture claire et une identité visuelle cohérente.',
+  },
+  {
+    title: 'Visuels pour réseaux sociaux',
+    tag: 'Communication',
+    text: 'Création de visuels et déclinaisons pour les formats des réseaux sociaux. Le travail porte sur la lisibilité, l’accroche, la cohérence graphique et l’adaptation des contenus aux différents supports.',
+  },
+]
+
+const skills = [
+  {
+    title: 'Design graphique & UX',
+    text: 'Conception de maquettes et de parcours utilisateurs, organisation de composants, variantes, auto-layout et prototypage dans Figma.',
+    icon: Layout,
+  },
+  {
+    title: 'Identité visuelle & communication',
+    text: 'Création de logos, chartes et déclinaisons graphiques. Production de visuels adaptés aux réseaux sociaux et aux supports de communication.',
+    icon: Palette,
+  },
+  {
+    title: 'Systèmes & matériel',
+    text: 'Montage et dépannage de PC, diagnostic matériel, installation de systèmes, maintenance de postes et récupération de données.',
+    icon: Briefcase,
+  },
+  {
+    title: 'Réseau, support & web',
+    text: 'Assistance utilisateur, bases TCP/IP et réseaux locaux, ainsi qu’intégration de sites avec HTML, CSS, JavaScript et React.',
+    icon: Globe,
+  },
+]
+
+const extraSkills = [
+  'Figma',
+  'Prototypage',
+  'Identité visuelle',
+  'Adobe Creative Suite',
+  'Canva',
+  'HTML/CSS',
+  'JavaScript',
+  'React',
+  'Maintenance informatique',
+  'Support utilisateur',
+  'Windows',
+  'Linux',
+  'TCP/IP',
+  'Réseaux locaux',
+  'Bureau à distance',
 ]
 
 function App() {
@@ -78,6 +129,12 @@ function App() {
                 Rigoureux, méthodique et orienté <strong>service client</strong>, je suis à la recherche d’une
                 opportunité où je peux développer mes compétences, apporter de la valeur et contribuer à des
                 missions variées avec sérieux et motivation.
+              </p>
+              <p>
+                Mon parcours en design graphique et communication complète mon expérience technique :
+                je conçois des maquettes et des visuels soignés, puis je peux participer à leur intégration
+                web. J’aime transformer un besoin en une solution claire, pratique et adaptée aux personnes
+                qui vont l’utiliser.
               </p>
 
               <div className="stats-row">
@@ -173,6 +230,11 @@ function App() {
         return (
           <section id="projects" className="panel">
             <h2>Projets</h2>
+            <p>
+              Ces réalisations illustrent des domaines complémentaires : création visuelle, conception
+              d’interfaces web et assistance informatique. Chaque projet demande d’abord de comprendre le
+              besoin, puis de proposer une solution claire et adaptée.
+            </p>
             <div className="project-grid">
               {projectCards.map(({ title, tag, text }) => (
                 <article key={title} className="project-card">
@@ -182,6 +244,28 @@ function App() {
                 </article>
               ))}
             </div>
+            <div className="extra-skills">
+              <h3>Compétences clés</h3>
+              <p>
+                Des compétences créatives et techniques que je mobilise selon les besoins du projet.
+              </p>
+              <div className="skills-grid">
+                {skills.map(({ title, text, icon: Icon }) => (
+                  <article key={title} className="skill-box">
+                    <div className="skill-icon">
+                      <Icon size={20} />
+                    </div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="chip-list">
+                {extraSkills.map((skill) => (
+                  <span key={skill} className="chip">{skill}</span>
+                ))}
+              </div>
+            </div>
           </section>
         )
 
@@ -189,6 +273,11 @@ function App() {
         return (
           <section id="contact" className="panel">
             <h2>Me contacter</h2>
+            <p>
+              Pour un projet, une collaboration ou une opportunité professionnelle, vous pouvez me
+              contacter par email ou par téléphone. Je suis disponible immédiatement et heureux
+              d’échanger sur vos besoins.
+            </p>
             <div className="contact-grid">
               <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
                 <div className="input-grid">
@@ -212,6 +301,21 @@ function App() {
               </form>
 
               <div className="social-box">
+                <h3>Coordonnées</h3>
+                <div className="social-list">
+                  <a className="meta-item" href="mailto:loic.rkt0@gmail.com">
+                    <Mail size={16} />
+                    <span>loic.rkt0@gmail.com</span>
+                  </a>
+                  <a className="meta-item" href="tel:+261326798728">
+                    <Phone size={16} />
+                    <span>+261 32 67 987 28</span>
+                  </a>
+                  <div className="meta-item">
+                    <MapPin size={16} />
+                    <span>Ankazomanga, Antananarivo</span>
+                  </div>
+                </div>
                 <h3>Réseaux &amp; Portfolio</h3>
                 <div className="social-list">
                   {socialLinks.map(({ label, href, icon: Icon }) => (
